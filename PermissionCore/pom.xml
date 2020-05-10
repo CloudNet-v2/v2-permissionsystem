@@ -25,6 +25,12 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${dependency.gson.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>
