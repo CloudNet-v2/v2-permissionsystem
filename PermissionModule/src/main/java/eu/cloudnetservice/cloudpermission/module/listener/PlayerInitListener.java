@@ -25,7 +25,7 @@ public final class PlayerInitListener implements IEventListener<PlayerInitEvent>
                                  .getPermissionPool()
                                  .getGroups()
                                  .containsKey(groupEntityData.getGroup()) || (System.currentTimeMillis() > groupEntityData.getTimeout() && groupEntityData
-                .getTimeout() != -1 && groupEntityData.getTimeout() != 0)) {
+                                                                                                                                               .getTimeout() != -1 && groupEntityData.getTimeout() != 0)) {
                 groupEntiys.add(groupEntityData);
             }
         }

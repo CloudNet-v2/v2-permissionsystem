@@ -253,7 +253,9 @@ public final class CommandPermissions extends Command {
                                 stringBuilder.append(groupEntityData.getGroup())
                                              .append('@')
                                              .append(groupEntityData.getTimeout() == 0 || groupEntityData
-                                                                                              .getTimeout() == -1 ? "LIFETIME" : simpleDateFormat.format(groupEntityData.getTimeout()))
+                                                                                              .getTimeout() == -1
+                                                     ? "LIFETIME"
+                                                     : simpleDateFormat.format(groupEntityData.getTimeout()))
                                              .append(NetworkUtils.SPACE_STRING);
                             }
 
@@ -443,17 +445,22 @@ public final class CommandPermissions extends Command {
         CloudNet.getInstance().getNetworkManager().sendAllUpdate(new PacketOutUpdateOfflinePlayer(offlinePlayer));
     }
 
+    private static long calcDays(int value) {
+        return (System.currentTimeMillis() + ((TimeUnit.DAYS.toMillis(value))));
+    }
+
     /**
      * Map the new package system to old one to fix api issues.
      * @param newPerms the new style entity.
      * @return old style entity.
      */
     private de.dytanic.cloudnet.lib.player.permission.PermissionEntity getOld(PermissionEntity newPerms) {
-        return new de.dytanic.cloudnet.lib.player.permission.PermissionEntity(newPerms.getUniqueId(),newPerms.getPermissions(),newPerms.getPrefix(),newPerms.getSuffix(),newPerms.getGroups().stream().map(gd -> new de.dytanic.cloudnet.lib.player.permission.GroupEntityData(gd.getGroup(),gd.getTimeout())).collect(
-            Collectors.toList()));
-    }
-
-    private static long calcDays(int value) {
-        return (System.currentTimeMillis() + ((TimeUnit.DAYS.toMillis(value))));
+        return new de.dytanic.cloudnet.lib.player.permission.PermissionEntity(newPerms.getUniqueId(),
+            newPerms.getPermissions(),
+            newPerms.getPrefix(),
+            newPerms.getSuffix(),
+            newPerms.getGroups().stream().map(gd -> new de.dytanic.cloudnet.lib.player.permission.GroupEntityData(gd.getGroup(),
+                gd.getTimeout())).collect(
+                Collectors.toList()));
     }
 }

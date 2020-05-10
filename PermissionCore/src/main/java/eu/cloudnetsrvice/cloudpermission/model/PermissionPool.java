@@ -9,10 +9,8 @@ import java.util.Map;
 
 public class PermissionPool {
     public static final Type TYPE = TypeToken.get(PermissionPool.class).getType();
-
-    private boolean available = true;
-
     private final Map<String, PermissionGroup> groups = new HashMap<>();
+    private boolean available = true;
     private PermissionGroup defaultGroup;
 
     public PermissionPool() {

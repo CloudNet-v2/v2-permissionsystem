@@ -17,7 +17,12 @@ public class CloudPlayer extends OfflinePlayer {
     private PlayerExecutor playerExecutor;
 
     public CloudPlayer(OfflinePlayer player, PlayerConnection onlineConnection, String proxy) {
-        super(player.getUniqueId(), player.getName(), player.getLastLogin(), player.getFirstLogin(), player.getLastPlayerConnection(), player.getPermissionEntity());
+        super(player.getUniqueId(),
+            player.getName(),
+            player.getLastLogin(),
+            player.getFirstLogin(),
+            player.getLastPlayerConnection(),
+            player.getPermissionEntity());
         this.playerConnection = onlineConnection;
         this.proxy = proxy;
         this.server = null;
@@ -26,7 +31,12 @@ public class CloudPlayer extends OfflinePlayer {
     }
 
     public static OfflinePlayer newOfflinePlayer(OfflinePlayer cloudPlayer) {
-        return new OfflinePlayer(cloudPlayer.getUniqueId(), cloudPlayer.getName(),  cloudPlayer.getLastLogin(), cloudPlayer.getFirstLogin(), cloudPlayer.getLastPlayerConnection(), cloudPlayer.getPermissionEntity());
+        return new OfflinePlayer(cloudPlayer.getUniqueId(),
+            cloudPlayer.getName(),
+            cloudPlayer.getLastLogin(),
+            cloudPlayer.getFirstLogin(),
+            cloudPlayer.getLastPlayerConnection(),
+            cloudPlayer.getPermissionEntity());
     }
 
     public int hashCode() {
@@ -44,8 +54,11 @@ public class CloudPlayer extends OfflinePlayer {
         } else if (!(o instanceof CloudPlayer)) {
             return false;
         } else {
-            CloudPlayer that = (CloudPlayer)o;
-            return Objects.equals(this.playerConnection, that.playerConnection) && Objects.equals(this.proxy, that.proxy) && Objects.equals(this.server, that.server) && Objects.equals(this.loginTimeStamp, that.loginTimeStamp) && Objects.equals(this.playerExecutor, that.playerExecutor);
+            CloudPlayer that = (CloudPlayer) o;
+            return Objects.equals(this.playerConnection, that.playerConnection) && Objects.equals(this.proxy, that.proxy) && Objects.equals(
+                this.server,
+                that.server) && Objects.equals(this.loginTimeStamp, that.loginTimeStamp) && Objects.equals(this.playerExecutor,
+                that.playerExecutor);
         }
     }
 
