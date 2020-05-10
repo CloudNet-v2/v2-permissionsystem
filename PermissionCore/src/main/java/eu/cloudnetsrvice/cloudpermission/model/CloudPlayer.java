@@ -8,8 +8,8 @@ import java.util.Objects;
 
 public class CloudPlayer extends OfflinePlayer {
 
-    public static final Type TYPE = (new TypeToken<CloudPlayer>() {
-    }).getType();
+    public static final Type TYPE = TypeToken.get(CloudPlayer.class).getType();
+
     private PlayerConnection playerConnection;
     private String proxy;
     private String server;
@@ -39,31 +39,36 @@ public class CloudPlayer extends OfflinePlayer {
             cloudPlayer.getPermissionEntity());
     }
 
-    public int hashCode() {
-        int result = this.playerConnection != null ? this.playerConnection.hashCode() : 0;
-        result = 31 * result + (this.proxy != null ? this.proxy.hashCode() : 0);
-        result = 31 * result + (this.server != null ? this.server.hashCode() : 0);
-        result = 31 * result + (this.loginTimeStamp != null ? this.loginTimeStamp.hashCode() : 0);
-        result = 31 * result + (this.playerExecutor != null ? this.playerExecutor.hashCode() : 0);
-        return result;
-    }
-
-    public boolean equals(Object o) {
+    @Override
+    public boolean equals(final Object o) {
         if (this == o) {
             return true;
-        } else if (!(o instanceof CloudPlayer)) {
-            return false;
-        } else {
-            CloudPlayer that = (CloudPlayer) o;
-            return Objects.equals(this.playerConnection, that.playerConnection) && Objects.equals(this.proxy, that.proxy) && Objects.equals(
-                this.server,
-                that.server) && Objects.equals(this.loginTimeStamp, that.loginTimeStamp) && Objects.equals(this.playerExecutor,
-                that.playerExecutor);
         }
+        if (!(o instanceof CloudPlayer)) {
+            return false;
+        }
+        final CloudPlayer that = (CloudPlayer) o;
+        return Objects.equals(playerConnection, that.playerConnection) &&
+               Objects.equals(proxy, that.proxy) &&
+               Objects.equals(server, that.server) &&
+               Objects.equals(loginTimeStamp, that.loginTimeStamp) &&
+               Objects.equals(playerExecutor, that.playerExecutor);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(playerConnection, proxy, server, loginTimeStamp, playerExecutor);
+    }
+
+    @Override
     public String toString() {
-        return "CloudPlayer{playerConnection=" + this.playerConnection + ", proxy='" + this.proxy + '\'' + ", server='" + this.server + '\'' + ", loginTimeStamp=" + this.loginTimeStamp + ", playerExecutor=" + this.playerExecutor + "} " + super.toString();
+        return "CloudPlayer{" +
+               "playerConnection=" + playerConnection +
+               ", proxy='" + proxy + '\'' +
+               ", server='" + server + '\'' +
+               ", loginTimeStamp=" + loginTimeStamp +
+               ", playerExecutor=" + playerExecutor +
+               '}';
     }
 
     public String getServer() {

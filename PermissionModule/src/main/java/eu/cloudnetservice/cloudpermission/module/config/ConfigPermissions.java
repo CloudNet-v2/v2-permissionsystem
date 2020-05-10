@@ -20,8 +20,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ConfigPermissions {
 
-    private static final Type COLLECTION_PERMISSION_GROUP_TYPE = TypeToken.getParameterized(Collection.class, PermissionGroup.class)
-                                                                          .getType();
     private final Path path = Paths.get("local/perms.yml");
 
     private Configuration cache;
