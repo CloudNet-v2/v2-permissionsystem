@@ -11,5 +11,51 @@
 
     <artifactId>PermissionModule</artifactId>
 
+    <repositories>
+        <repository>
+            <id>cloudnet-repo</id>
+            <url>https://repo.cloudnetservice.eu/repository/releases</url>
+        </repository>
+    </repositories>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${plugin.shade.version}</version>
+                <configuration>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>eu.cloudnetservice</groupId>
+            <artifactId>PermissionCore</artifactId>
+            <version>${permission.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.dytanic.cloudnet</groupId>
+            <artifactId>cloudnet-core</artifactId>
+            <version>${dependency.cloudnet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 </project>
