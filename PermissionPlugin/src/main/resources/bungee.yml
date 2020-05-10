@@ -1,0 +1,4 @@
+name: CloudPermission
+main: eu.cloudnetservice.cloudpermission.BungeePermissionPlugin
+version: ${permission.version}
+author: CloudNetService

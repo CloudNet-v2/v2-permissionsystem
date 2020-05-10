@@ -1,5 +1,5 @@
 name: CloudPermissions
-main: eu.cloudnetservice.cloudpermission.PermissionPlugin
+main: eu.cloudnetservice.cloudpermission.BukkitPermissionPlugin
 version: ${permission.version}
 
 api-version: 1.13
