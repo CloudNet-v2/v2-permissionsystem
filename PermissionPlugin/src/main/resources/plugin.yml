@@ -1,0 +1,11 @@
+name: CloudPermissions
+main: eu.cloudnetservice.cloudpermission.BukkitPermissionPlugin
+version: ${permission.version}
+
+api-version: 1.13
+author: CloudNetService
+
+depend: [CloudNetAPI]
+
+description: CloudNet Permission System
+website: https://cloudnetservice.eu/
