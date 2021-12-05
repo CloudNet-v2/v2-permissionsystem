@@ -1,14 +1,4 @@
-[![Build Status](https://ci.cloudnetservice.eu/buildStatus/icon?job=CloudNetService/v2-permissionsystem/master)](https://ci.cloudnetservice.eu/job/CloudNetService/job/v2-permissionsystem/master)
-[![star this repo](http://githubbadges.com/star.svg?user=CloudNetService&repo=v2-permissionsystem)](https://github.com/CloudNetService/v2-permissionsystem)
-[![fork this repo](http://githubbadges.com/fork.svg?user=CloudNetService&repo=v2-permissionsystem)](https://github.com/CloudNetService/v2-permissionsystem/fork)
-[![GitHub license](https://img.shields.io/github/license/CloudNetService/v2-permissionsystem.svg)](https://github.com/CloudNetService/v2-permissionsystem/blob/master/LICENSE)
-
-[![DepShield Badge](https://depshield.sonatype.org/badges/CloudNetService/v2-permissionsystem/depshield.svg)](https://depshield.github.io)
-[![GitHub issues](https://img.shields.io/github/issues/CloudNetService/v2-permissionsystem.svg)](https://github.com/CloudNetService/v2-permissionsystem/issues)
-[![GitHub contributors](https://img.shields.io/github/contributors/CloudNetService/v2-permissionsystem.svg)](https://github.com/CloudNetService/v2-permissionsystem/graphs/contributors)
-[![Github All Releases](https://img.shields.io/github/downloads/CloudNetService/v2-permissionsystem/total.svg)](https://github.com/CloudNetService/v2-permissionsystem/releases)
-[![GitHub release](https://img.shields.io/github/release/CloudNetService/v2-permissionsystem.svg)](https://github.com/CloudNetService/v2-permissionsystem/releases)
-
+# This project is archived! Please consider using [CloudNet v3](https://github.com/CloudNetService/CloudNet-v3). The CloudNet v2 repository can be found [here](https://github.com/CloudNetService/CloudNet).
 
 
 # Permission System | The Cloud Network Environment Technology 2
